@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+  width: 90%;
+}
+.thumbnail {
+  margin: auto;
+}
+section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+li {
+  text-align: left;
+}
