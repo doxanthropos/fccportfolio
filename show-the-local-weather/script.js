@@ -11,7 +11,7 @@ window.onload = function(){
       longitude = position.coords.longitude;
       /* my key for OpenWeatherMap: 420a256bd565195fc4cfe5da7c01cf51 */
       var key = "420a256bd565195fc4cfe5da7c01cf51";
-      var url = "https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=420a256bd565195fc4cfe5da7c01cf51";
+      var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=420a256bd565195fc4cfe5da7c01cf51";
       $.getJSON(url,function(weather){
         var city = weather.name;
         console.log(city);
