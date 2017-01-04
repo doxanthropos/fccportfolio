@@ -9,12 +9,17 @@ window.onload = function(){
     navigator.geolocation.getCurrentPosition(function(position){
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
-      console.log("Latitude : " + latitude);
-      console.log("Longitude : " + longitude);
       /* my key for OpenWeatherMap: 420a256bd565195fc4cfe5da7c01cf51 */
-      var url = "http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=420a256bd565195fc4cfe5da7c01cf51";
+      var key = "420a256bd565195fc4cfe5da7c01cf51";
+      var url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&APPID=420a256bd565195fc4cfe5da7c01cf51";
       $.getJSON(url,function(weather){
-        console.log(weather)
+        var city = weather.name;
+        document.getElementById("location").innerHTML = city + ", " + weather.sys.country;
+        document.getElementById("temperatureC").innerHTML = (Math.round(weather.main.temp-273.15));
+        /* converting to Fahrenheit according to http://www.rapidtables.com/convert/temperature/how-kelvin-to-fahrenheit.htm */
+        document.getElementById("temperatureF").innerHTML = (Math.round((weather.main.temp*9/5)-459.67));
+        document.getElementById("description").innerHTML = weather.weather[0].description;
+        document.getElementById("weatherIcon").src = "https://openweathermap.org/img/w/"+weather.weather[0].icon+".png"
       });
     });
   } else {
