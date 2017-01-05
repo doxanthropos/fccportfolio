@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Orbitron');
 body {
-    text-align: center;
+  background: #080808;
+  color: #00ef00;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 5vw;
 }
 header {
 
@@ -9,4 +14,38 @@ header {
 }
 #celsius {
   display: block;
+}
+
+h1,h2, a.site-title, a.page-link {
+  font-family: 'Orbitron', sans;
+}
+h1 {
+  font-size: 3vw;
+}
+h2 {
+  font-size: 2vw;
+}
+.unit {
+  padding: 1%;
+  border-radius: 10%;
+  background: #191919;
+  color: lightblue;
+}
+#description {
+  font-size: 2vw;
+}
+
+@media (max-width: 800px){
+  body {
+    font-size: 8vw;
+  }
+  h1 {
+    font-size: 6vw;
+  }
+  h2 {
+    font-size: 5vw;
+  }
+  #description {
+    font-size: 5vw;
+  }
 }

@@ -1,4 +1,3 @@
-/* The first part is responsible for the actual weather */
 window.onload = function(){
   var latitude;// = 50.314382099999996;
   var longitude;// =7.5623594;
@@ -23,15 +22,14 @@ window.onload = function(){
         /* converting to Fahrenheit according to http://www.rapidtables.com/convert/temperature/how-kelvin-to-fahrenheit.htm */
         document.getElementById("temperatureF").innerHTML = (Math.round((weather.main.temp*9/5)-459.67));
         document.getElementById("description").innerHTML = weather.weather[0].description;
-        document.getElementById("weatherIcon").src = "https://openweathermap.org/img/w/"+weather.weather[0].icon+".png"
+        document.getElementById("weatherIcon").className = "wi wi-owm-"+weather.weather[0].id;
       });
     });
   } else {
     console.log("geolocation IS NOT available");
   }
-
+}
 /* From here on you will find the UI */
-
 /* switching between Fahrenheit and Celsius */
 
 $("#celsius").click(function(){
