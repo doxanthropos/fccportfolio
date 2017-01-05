@@ -4,3 +4,9 @@ body {
 header {
 
 }
+#fahrenheit {
+  display: none;
+}
+#celsius {
+  display: block;
+}
