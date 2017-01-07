@@ -12,10 +12,15 @@
 </head>
 <body>
   <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Show random article</a>
+  <input id="searchInput" type="text" autofocus="autofocus"></input>
+  <button onclick="getInput()">search</button>
+  <p id="output"></p>
   <script id="resultList" type="text/x-handlebars-template">​
+    <ul>
 	 {{#each results}}​
-	 <p><a href="{{ url }}">{{ title }}</a></p>​
+	 <li><a href="{{ url }}">{{ title }}</a></li>​
 	    {{/each}}
+    </ul>
 	​</script>
 </body>
 </html>
